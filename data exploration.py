@@ -1,4 +1,7 @@
 import pandas as pd
 
-data = pd.read_excel(data_assignment.xlsx)
-data
+data = pd.read_excel("data/data_assignment.xlsx")
+print(data.head())
+
+
+
