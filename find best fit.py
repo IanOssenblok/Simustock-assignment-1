@@ -78,6 +78,22 @@ def create_ecdf(data):
     plt.ylabel("CDF")
     plt.show()
 
+    plt.figure(figsize=(10, 10))
+    plt.hist(data, bins=15, density=True, alpha=1, color='gray', label='Histogram')
+
+    plt.plot(xs, fitNormDist.pdf(xs), 'b', label='Normal')
+    plt.plot(xs, fitGammaDist.pdf(xs), 'r', label='Gamma')
+    plt.plot(xs, fitExpDist.pdf(xs), 'g', label='Exponential')
+    plt.plot(xs, fitUnifDist.pdf(xs), color='orange', label='Uniform')
+    plt.plot(xs, fitLogNorm.pdf(xs), 'purple', label='Lognormal')
+    plt.plot(xs, fitLogLogis.pdf(xs), 'brown', label='Log-logistic')
+
+    plt.legend()
+    plt.title("Histogram with Fitted Distributions")
+    plt.xlabel("x")
+    plt.ylabel("Density")
+    plt.show()
+
     # Show KS test results
     df = pd.DataFrame(results, columns=["Distribution", "KS Statistic", "p-value"])
     df = df.sort_values(by="KS Statistic")
