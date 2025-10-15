@@ -166,13 +166,13 @@ lam_combined_ex4 = (len(df_incomes) + len(df_example_social_life)) / total_days 
 p_income_ex4 = len(df_incomes) / (len(df_incomes) + len(df_example_social_life))
 
 
-print(f"income simulation w/ gamma, result: {single_simulation(df_incomes, lam_incomes, T, 1000)}")  # log-log: 265k avg, log-normal: 3k avg, gamma: 2,5k avg
-print(f"expense simulation w/ exponential, result: {single_simulation(df_expenses, lam_expenses, T, 1000)}") #log-log: 4.9k avg, log-normal: 2.2k avg, expontential: 2.3k avg
-print(f"combined simulation, result: {combined_simulation(df_incomes, df_expenses, lam_combined, T, 1000, p_income)}")
-print(f"example 1: 20% increased food prices, result: {combined_simulation(df_incomes, df_example_food20, lam_combined, T, 1000, p_income)}")
-print(f"example 2: no job income, result: {combined_simulation(df_example_salary, df_expenses, lam_combined_ex2, T, 1000, p_income_ex2)}")
-print(f"example 3: double transportation costs, result: {combined_simulation(df_incomes, df_example_trains, lam_combined, T, 1000, p_income)}")
-print(f"example 4: twice as many social life events, result: {combined_simulation(df_incomes, df_example_social_life, lam_combined_ex4, T, 1000, p_income_ex4)}")
+print(f"income simulation w/ gamma, result: {single_simulation(df_incomes, lam_incomes, T, 10000)}")  # log-log: 265k avg, log-normal: 3k avg, gamma: 2,5k avg
+print(f"expense simulation w/ exponential, result: {single_simulation(df_expenses, lam_expenses, T, 10000)}") #log-log: 4.9k avg, log-normal: 2.2k avg, expontential: 2.3k avg
+print(f"combined simulation, result: {combined_simulation(df_incomes, df_expenses, lam_combined, T, 10000, p_income)}")
+print(f"example 1: 20% increased food prices, result: {combined_simulation(df_incomes, df_example_food20, lam_combined, T, 10000, p_income)}")
+print(f"example 2: no job income, result: {combined_simulation(df_example_salary, df_expenses, lam_combined_ex2, T, 10000, p_income_ex2)}")
+print(f"example 3: double transportation costs, result: {combined_simulation(df_incomes, df_example_trains, lam_combined, T, 10000, p_income)}")
+print(f"example 4: twice as many social life events, result: {combined_simulation(df_incomes, df_example_social_life, lam_combined_ex4, T, 10000, p_income_ex4)}")
 
 
 def check_exponential_fit(interarrivals, alpha=0.05, plot=True): # 95% significance
