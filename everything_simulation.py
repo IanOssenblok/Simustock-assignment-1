@@ -24,7 +24,6 @@ p_income = len(df_incomes) / len(df)
 
 def single_simulation(data, lam, T, R):
     expDist = stats.expon(scale=1/lam)
-
     # fit gamma distribution for income data (use this for simulations)
     M1 = np.mean(data)
     M2 = np.mean(data ** 2)

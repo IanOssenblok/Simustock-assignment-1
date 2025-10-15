@@ -8,4 +8,4 @@ Each will plot a graph of the first simulation, and will then return the average
 Then it also runs simulations for our 4 example situations. 
 Finally it will make a plot of the interarrival times of the combined simulation to check if the times are actually exponentially distributed or not. 
 
-3. Run generating_images for all the EDA graphs and all the other graphs used in the report. Every image is saved in their respective folder.
+3. Run eda_expenses_notebook.ipynb and time_exploration.py for all the EDA graphs.
