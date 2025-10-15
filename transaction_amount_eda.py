@@ -28,3 +28,40 @@ plt.title("Number of Transactions by Day of Week")
 plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
+
+# figure for running balance over time
+plt.figure(figsize=(12, 4))
+plt.plot(daily['Date'], daily['balance'], label='Running Balance', color='purple')
+plt.axhline(0, color='gray', linestyle='--')
+plt.title("Running Balance Over Time")
+plt.xlabel("Date")
+plt.ylabel("Balance (€)")
+plt.tight_layout()
+plt.show()
+
+# function to compute interarrival times (in days) between unique dates
+def interarrival(dates):
+    sorted_dates = np.sort(pd.to_datetime(dates).unique())
+    return np.diff(sorted_dates).astype('timedelta64[D]').astype(int)
+
+inc_ia = interarrival(df.loc[df['is_income'], 'Date']) # computing interarrival times for income transactions
+exp_ia = interarrival(df.loc[df['is_expense'], 'Date']) # computing interarrival times for expense transactions
+
+
+# figure for of income interarrival times
+plt.figure(figsize=(10, 4))
+sns.histplot(inc_ia, bins=15, kde=False, color='green')
+plt.title("Interarrival Times – Income (days)")
+plt.xlabel("Days Between Income Events")
+plt.ylabel("Count")
+plt.tight_layout()
+plt.show()
+
+# figure for expense interarrival times
+plt.figure(figsize=(10, 4))
+sns.histplot(exp_ia, bins=15, kde=False, color='red')
+plt.title("Interarrival Times – Expense (days)")
+plt.xlabel("Days Between Expense Events")
+plt.ylabel("Count")
+plt.tight_layout()
+plt.show()
