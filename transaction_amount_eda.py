@@ -29,6 +29,10 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
 
+
+daily = df.groupby('Date')['signed_amount'].sum().reset_index()
+daily['balance'] = daily['signed_amount'].cumsum()
+
 # figure for running balance over time
 plt.figure(figsize=(12, 4))
 plt.plot(daily['Date'], daily['balance'], label='Running Balance', color='purple')
