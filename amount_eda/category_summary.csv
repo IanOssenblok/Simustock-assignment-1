@@ -1,0 +1,15 @@
+Category,count,sum,mean,std,Type
+Other,60,1514.7,25.245,58.02061125590176,income
+Food,156,935.9,5.999358974358974,7.5300216064023795,expense
+Allowance,6,560.0,93.33333333333333,112.19031449580069,income
+Household,6,487.5,81.25,87.41472988003795,expense
+Student Grant,3,378.0,126.0,0.0,income
+Transportation,31,368.1,11.874193548387098,17.061027084009048,expense
+Salary,1,320.0,320.0,,income
+Apparel,7,135.6,19.37142857142857,24.24965390032844,expense
+Social Life,5,100.5,20.1,27.065660900853686,expense
+Education,1,56.0,56.0,,expense
+Self-development,1,16.0,16.0,,expense
+Beauty,1,7.8,7.8,,expense
+Gift,1,4.6,4.6,,expense
+Petty cash,1,0.1,0.1,,income
